@@ -1,67 +1,54 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { 
-  Code2, Terminal, Database, Cpu, Globe, 
-  Layout, Server, Smartphone, Layers, Command 
-} from "lucide-react";
-
-const row1 = [
-  { name: "Next.js", icon: <Globe size={16} /> },
-  { name: "React", icon: <Code2 size={16} /> },
-  { name: "Laravel", icon: <Terminal size={16} /> },
-  { name: "TypeScript", icon: <Cpu size={16} /> },
-  { name: "Tailwind", icon: <Layout size={16} /> },
-];
-
-const row2 = [
-  { name: "MySQL", icon: <Database size={16} /> },
-  { name: "Docker", icon: <Server size={16} /> },
-  { name: "Framer Motion", icon: <Layers size={16} /> },
-  { name: "Git", icon: <Command size={16} /> },
-  { name: "Mobile", icon: <Smartphone size={16} /> },
-];
+import React from "react";
+import { TECH_ROW_1, TECH_ROW_2, TechItem } from "@/constants";
 
 export function TechStack() {
   return (
-    <div className="w-full py-8 space-y-4 overflow-hidden select-none relative">
-      
-      <div className="absolute inset-y-0 left-0 w-20 bg-linear-to-r from-slate-50 to-transparent z-10" />
-      <div className="absolute inset-y-0 right-0 w-20 bg-linear-to-l from-slate-50 to-transparent z-10" />
+    <div className="w-full py-10 space-y-6 overflow-hidden select-none relative">
+      <div className="absolute inset-y-0 left-0 w-24 bg-linear-to-r from-slate-50 to-transparent z-10 pointer-events-none" />
+      <div className="absolute inset-y-0 right-0 w-24 bg-linear-to-l from-slate-50 to-transparent z-10 pointer-events-none" />
 
-      {/* Baris 1: Kiri ke Kanan */}
-      <div className="flex w-full">
-        <motion.div 
-          className="flex gap-4 pr-4"
-          initial={{ x: 0 }}
-          animate={{ x: "-50%" }}
-          transition={{ repeat: Infinity, ease: "linear", duration: 40 }}
-        >
-          {/* Duplikasi array berulang kali agar tidak putus */}
-          {[...row1, ...row1, ...row1, ...row1, ...row1, ...row1, ...row1, ...row1].map((tech, i) => (
-            <div key={i} className="flex items-center gap-2 px-4 py-2 bg-white border border-slate-200 rounded-md whitespace-nowrap text-sm font-semibold text-slate-600 shadow-sm hover:border-blue-400 hover:text-blue-600 transition-colors">
-              {tech.icon} {tech.name}
-            </div>
-          ))}
-        </motion.div>
-      </div>
+      <MarqueeRow items={TECH_ROW_1} direction="left" speed={30} />
+      <MarqueeRow items={TECH_ROW_2} direction="right" speed={30} />
+    </div>
+  );
+}
 
-      {/* Baris 2: Kanan ke Kiri */}
-      <div className="flex w-full">
-        <motion.div 
-          className="flex gap-4 pr-4"
-          initial={{ x: "-50%" }}
-          animate={{ x: 0 }}
-          transition={{ repeat: Infinity, ease: "linear", duration: 40 }}
-        >
-          {[...row2, ...row2, ...row2, ...row2, ...row2, ...row2, ...row2, ...row2].map((tech, i) => (
-            <div key={i} className="flex items-center gap-2 px-4 py-2 bg-white border border-slate-200 rounded-md whitespace-nowrap text-sm font-semibold text-slate-600 shadow-sm hover:border-blue-400 hover:text-blue-600 transition-colors">
-              {tech.icon} {tech.name}
-            </div>
-          ))}
-        </motion.div>
-      </div>
+interface MarqueeRowProps {
+  items: TechItem[];
+  direction: "left" | "right";
+  speed: number;
+}
 
+function MarqueeRow({ items, direction, speed }: MarqueeRowProps) {
+  const duplicatedItems = Array(10).fill(items).flat();
+
+  return (
+    <div className="flex w-full overflow-hidden">
+      <motion.div 
+        className="flex gap-4 pr-4"
+        initial={{ x: direction === "left" ? 0 : "-50%" }}
+        animate={{ x: direction === "left" ? "-50%" : 0 }}
+        transition={{ 
+          repeat: Infinity, 
+          ease: "linear", 
+          duration: speed 
+        }}
+      >
+        {duplicatedItems.map((tech, i) => (
+          <div 
+            key={i} 
+            className="group flex items-center gap-2 px-5 py-2.5 bg-white border border-slate-200 rounded-lg whitespace-nowrap text-sm font-semibold text-slate-600 shadow-sm hover:border-blue-500 hover:text-blue-600 hover:shadow-md transition-all duration-300 cursor-default"
+          >
+            <span className="text-slate-400 group-hover:text-blue-500 transition-colors">
+                {tech.icon}
+            </span>
+            {tech.name}
+          </div>
+        ))}
+      </motion.div>
     </div>
   );
 }

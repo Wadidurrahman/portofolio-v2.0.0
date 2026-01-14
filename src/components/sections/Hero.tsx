@@ -1,105 +1,159 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { ArrowRight, Download, Linkedin, Github } from "lucide-react";
+import { motion, Variants, TargetAndTransition } from "framer-motion";
+import { Mail, Terminal, Rocket } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
-import { TechStack } from "@/components/sections/TechStack";
+import { TechStack } from "@/components/sections/TechStack"; 
+
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 0.1,
+    },
+  },
+};
+
+const itemVariants: Variants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { 
+    opacity: 1, 
+    y: 0, 
+    transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } 
+  },
+};
+
+// FIX: Menambahkan tipe 'TargetAndTransition' agar TypeScript mengenali properti 'ease'
+const floatAnimation: TargetAndTransition = {
+  y: [0, -12, 0],
+  transition: {
+    duration: 4,
+    repeat: Infinity,
+    ease: "easeInOut"
+  }
+};
+
+const floatAnimationDelayed: TargetAndTransition = { 
+  y: [0, 10, 0], 
+  transition: { 
+    duration: 5, 
+    repeat: Infinity, 
+    ease: "easeInOut", 
+    delay: 1 
+  } 
+};
 
 export function Hero() {
   return (
-    <section className="relative flex flex-col justify-center min-h-[90vh] py-2 px-4 md:px-0 overflow-hidden">
+    <section className="relative flex flex-col justify-center min-h-[95vh] py-8 lg:py-2 px-4 md:px-8 overflow-hidden bg-white">
       
-      <div className="absolute top-20 right-0 w-96 h-96 bg-blue-100/40 rounded-full blur-3xl -z-10 opacity-60 translate-x-1/3" />
-      <div className="absolute bottom-0 left-0 w-72 h-72 bg-indigo-100/40 rounded-full blur-3xl -z-10 opacity-60 -translate-x-1/3" />
+     
+      <div className="absolute top-0 right-0 w-125 h-125 bg-indigo-50/80 rounded-full blur-3xl -z-10 opacity-70 translate-x-1/3 -translate-y-1/4" />
+      <div className="absolute bottom-0 left-0 w-100 h-100 bg-blue-50/80 rounded-full blur-3xl -z-10 opacity-70 -translate-x-1/3 translate-y-1/4" />
 
-      <div className="grid lg:grid-cols-2 gap-12 items-center w-full max-w-6xl mx-auto mb-16">
+      <div className="grid lg:grid-cols-2 gap-12 xl:gap-20 items-center w-full max-w-7xl mx-auto mb-10 relative z-10">
         
         <motion.div 
-          initial={{ opacity: 0, x: -30 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.7 }}
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
           className="order-2 lg:order-1 flex flex-col justify-center text-center lg:text-left"
         >
-          <div className="flex items-center justify-center lg:justify-start gap-2 mb-6">
-            <span className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></span>
-            <span className="text-xs font-bold text-emerald-700 bg-emerald-50 px-3 py-1 rounded-md border border-emerald-100 tracking-wide">
-              Tersedia untuk Proyek Baru
+          <motion.div variants={itemVariants} className="flex items-center justify-center lg:justify-start gap-3 mb-12">
+            <span className="relative flex h-3 w-3">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
             </span>
-          </div>
-
-          <h1 className="text-4xl md:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.1] mb-6">
-            Membangun Sistem Web <br />
-            <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-700 to-indigo-600">
-              Modern & Berdampak.
+            <span className="text-xs font-semibold text-emerald-700 bg-emerald-50/50 px-5 py-1 rounded-full border border-emerald-100 tracking-wide">
+              Terbuka Untuk Bekerja
             </span>
-          </h1>
+          </motion.div>
 
-          <p className="text-lg text-slate-600 mb-8 leading-relaxed max-w-lg mx-auto lg:mx-0">
-            Saya <span className="font-bold text-slate-900">Wadidur Rahman</span>. Fullstack Developer yang berpengalaman mengubah tantangan teknis menjadi aplikasi web yang <span className="font-semibold text-slate-900">efisien</span> dan <span className="font-semibold text-slate-900">skalabel</span>. Spesialisasi dalam ekosistem <span className="font-semibold text-blue-600">Next.js</span> & <span className="font-semibold text-indigo-600">Laravel</span>.
-          </p>
+          <motion.h1 variants={itemVariants} className="text-2xl md:text-3xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-[1.15] mb-6">
+            Mengubah Ide Menjadi <br className="hidden md:block" />
+          
+            <span className="bg-linear-to-r from-indigo-600 to-blue-500 bg-clip-text text-transparent">
+              Solusi Digital Skalabel.
+            </span>
+          </motion.h1>
 
-          <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4">
-            <Link href="/projects" className="group flex items-center gap-2 bg-slate-900 text-white px-8 py-3.5 rounded-md font-bold hover:bg-blue-700 transition-all shadow-lg active:translate-y-0.5">
-              Lihat Hasil Karya
-              <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+          <motion.p variants={itemVariants} className="text-lg text-slate-600 mb-8 leading-relaxed max-w-lg mx-auto lg:mx-0">
+            Saya <span className="font-bold text-slate-900">Wadidur Rahman</span>. Fullstack Developer yang fokus membangun aplikasi web <span className="font-semibold text-indigo-600">High-Performance</span> dengan arsitektur kode yang rapi.
+          </motion.p>
+
+          <motion.div variants={itemVariants} className="flex flex-wrap items-center justify-center lg:justify-start gap-4">
+            <Link href="/contact" className="group flex items-center gap-2 bg-slate-900 text-white px-7 py-3.5 rounded-lg font-medium hover:bg-slate-800 transition-all active:scale-95 shadow-lg shadow-slate-200">
+              <Mail size={18} className="group-hover:translate-x-0.5 transition-transform" />
+              <span>Hubungi Saya</span>
             </Link>
-            
-            <Link href="/resume" className="flex items-center gap-2 bg-white text-slate-700 border border-slate-300 px-8 py-3.5 rounded-md font-bold hover:bg-slate-50 hover:border-slate-400 transition-all active:translate-y-0.5 shadow-sm">
-              <Download size={18} />
-              Unduh CV
-            </Link>
-
-            <div className="flex items-center gap-2 px-4 border-l border-slate-200 ml-2">
-              <Link href="https://github.com" target="_blank" className="p-2 text-slate-500 hover:text-slate-900 hover:bg-slate-100 rounded-md transition-colors">
-                <Github size={20} />
-              </Link>
-              <Link href="https://linkedin.com" target="_blank" className="p-2 text-slate-500 hover:text-blue-700 hover:bg-blue-50 rounded-md transition-colors">
-                <Linkedin size={20} />
-              </Link>
-            </div>
-          </div>
+          </motion.div>
         </motion.div>
 
         <motion.div 
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8 }}
-          className="order-1 lg:order-2 flex justify-center lg:justify-end relative"
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="order-1 lg:order-2 flex justify-center lg:justify-end relative py-8 lg:py-0"
         >
-          <div className="relative w-75 h-95 md:w-95 md:h-120">
-            <div className="absolute inset-0 bg-blue-600 rounded-md rotate-6 opacity-10 translate-x-4 translate-y-4" />
-            <div className="absolute inset-0 border-2 border-slate-200 rounded-md -rotate-3 -translate-x-2.5 -translate-y-2.5" />
+          <div className="relative w-72 h-80 md:w-80 md:h-96 lg:w-96 lg:h-112.5">
             
-            <div className="relative w-full h-full rounded-md overflow-hidden shadow-2xl bg-white border-4 border-white">
+            <div className="absolute inset-0 bg-indigo-600 rounded-3xl rotate-6 opacity-5 translate-x-4 translate-y-4" />
+            <div className="absolute inset-0 border-2 border-slate-100 rounded-3xl -rotate-3 -translate-x-2 -translate-y-2" />
+            
+            <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl shadow-slate-200/50 bg-white border border-slate-100">
               <Image 
                 src="/profil.png" 
-                alt="Wadidur Rahman"
+                alt="Wadidur Rahman - Fullstack Developer"
                 fill
                 className="object-cover object-top hover:scale-105 transition-transform duration-700 ease-out"
                 priority
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               />
             </div>
 
             <motion.div 
-              animate={{ y: [0, -10, 0] }}
-              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -bottom-6 -left-6 bg-white p-4 rounded-md shadow-xl border border-slate-100 z-10 max-w-40"
+              animate={floatAnimation}
+              className="absolute -bottom-6 -left-4 md:-left-12 bg-white/95 backdrop-blur-md p-4 rounded-xl shadow-xl shadow-slate-200/50 border border-slate-100 z-20 flex items-center gap-4 pr-8"
             >
-               <p className="text-[10px] font-bold text-slate-400 mb-1">Core Competency</p>
-               <p className="text-xs font-bold text-slate-800 leading-tight">Clean Code & Scalable Architecture</p>
+                <div className="p-3 bg-indigo-50 text-indigo-600 rounded-lg">
+                    <Terminal size={22} />
+                </div>
+                <div>
+                    <p className="text-[10px] font-bold text-slate-400 tracking-wider uppercase">Focus</p>
+                    <p className="text-sm font-bold text-slate-800">Clean Code</p>
+                </div>
+            </motion.div>
+
+            <motion.div 
+              animate={floatAnimationDelayed}
+              className="absolute -top-6 -right-4 md:-right-8 bg-white/95 backdrop-blur-md p-4 rounded-xl shadow-xl shadow-slate-200/50 border border-slate-100 z-20 flex items-center gap-4 pr-8"
+            >
+                <div className="p-3 bg-blue-50 text-blue-600 rounded-lg">
+                    <Rocket size={22} />
+                </div>
+                <div>
+                    <p className="text-[10px] font-bold text-slate-400 tracking-wider uppercase">Performance</p>
+                    <p className="text-sm font-bold text-slate-800">Software Dev</p>
+                </div>
             </motion.div>
           </div>
         </motion.div>
-
       </div>
 
-      <div className="w-full mt-auto">
-        <div className="text-center mb-6">
-             <p className="text-xs font-bold text-slate-400 tracking-[0.2em]">Technologies & Tools</p>
-        </div>
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.6, duration: 0.6 }}
+        className="w-full text-center"
+      >
+        <span className="inline-block py-1.5 px-4 rounded-full bg-slate-50 border border-slate-100 text-slate-500 font-bold text-[10px] tracking-[0.2em] uppercase mb-6">
+            Tech Stack
+        </span>
         <TechStack />
-      </div>
+      </motion.div>
 
     </section>
   );

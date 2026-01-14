@@ -17,15 +17,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={`${inter.className} flex h-screen overflow-hidden bg-slate-50`}>
-        <aside className="hidden md:block w-72 shrink-0 h-full border-r border-slate-200 bg-white z-50">
+    <html lang="en" suppressHydrationWarning>
+      <body 
+        className={`${inter.className} flex h-screen overflow-hidden bg-slate-50 notranslate`}
+        translate="no"
+      >
+        <div className="flex-none z-50">
           <Sidebar />
-        </aside>
+        </div>
         
         <main className="flex-1 h-full overflow-y-auto relative p-6 scroll-smooth">
           <div className="max-w-7xl mx-auto">
-             {children}
+              {children}
           </div>
           <AiFloatingButton />
         </main>
