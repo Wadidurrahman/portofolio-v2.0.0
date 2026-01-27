@@ -53,12 +53,12 @@ export default function AboutPage() {
   return (
     <section className="relative min-h-full py-8 px-4 md:px-8 overflow-hidden">
       
-      {/* Background Decor */}
+
       <div className="absolute top-0 left-0 w-30 h-96 bg-blue-100/30 rounded-full blur-[100px] -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
 
       <div className="max-w-6xl mx-auto space-y-24 relative z-10">
         
-        {/* --- HERO SECTION --- */}
+
         <div className="grid lg:grid-cols-12 gap-12 items-center">
           <motion.div 
             className="lg:col-span-7 order-2 lg:order-1"

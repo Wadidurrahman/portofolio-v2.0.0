@@ -25,8 +25,6 @@ const itemVariants: Variants = {
     transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } 
   },
 };
-
-// FIX: Menambahkan tipe 'TargetAndTransition' agar TypeScript mengenali properti 'ease'
 const floatAnimation: TargetAndTransition = {
   y: [0, -12, 0],
   transition: {
@@ -73,19 +71,19 @@ export function Hero() {
           </motion.div>
 
           <motion.h1 variants={itemVariants} className="text-2xl md:text-3xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-[1.15] mb-6">
-            Mengubah Ide Menjadi <br className="hidden md:block" />
+            Mari Bangun Produk Digital  <br className="hidden md:block" />
           
             <span className="bg-linear-to-r from-indigo-600 to-blue-500 bg-clip-text text-transparent">
-              Solusi Digital Skalabel.
+              yang Lebih Baik, Bersama.
             </span>
           </motion.h1>
 
           <motion.p variants={itemVariants} className="text-lg text-slate-600 mb-8 leading-relaxed max-w-lg mx-auto lg:mx-0">
-            Saya <span className="font-bold text-slate-900">Wadidur Rahman</span>. Fullstack Developer yang fokus membangun aplikasi web <span className="font-semibold text-indigo-600">High-Performance</span> dengan arsitektur kode yang rapi.
+            Halo! Saya <span className="font-bold text-slate-900">Wadidur Rahman</span>. Saya seorang Fullstack Developer yang hobi ngerapiin kode dan bikin aplikasi web jadi <span className="font-semibold text-indigo-600">super kencang</span>. Intinya, saya rakit ide kamu jadi kenyataan lewat kodingan yang bersih.
           </motion.p>
 
           <motion.div variants={itemVariants} className="flex flex-wrap items-center justify-center lg:justify-start gap-4">
-            <Link href="/contact" className="group flex items-center gap-2 bg-slate-900 text-white px-7 py-3.5 rounded-lg font-medium hover:bg-slate-800 transition-all active:scale-95 shadow-lg shadow-slate-200">
+            <Link href="/contact" className="group flex items-center gap-2 bg-blue-00 text-white px-7 py-3.5 rounded-lg font-medium hover:bg-blue-500 transition-all active:scale-95 shadow-lg shadow-slate-200">
               <Mail size={18} className="group-hover:translate-x-0.5 transition-transform" />
               <span>Hubungi Saya</span>
             </Link>
@@ -149,12 +147,11 @@ export function Hero() {
         transition={{ delay: 0.6, duration: 0.6 }}
         className="w-full text-center"
       >
-        <span className="inline-block py-1.5 px-4 rounded-full bg-slate-50 border border-slate-100 text-slate-500 font-bold text-[10px] tracking-[0.2em] uppercase mb-6">
+        <span className="py-1 px-3 rounded-md bg-white border border-sky-100 text-sky-600 font-bold text-[10px] tracking-widest uppercase shadow-sm">
             Tech Stack
         </span>
         <TechStack />
       </motion.div>
-
     </section>
   );
 }

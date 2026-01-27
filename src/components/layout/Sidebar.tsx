@@ -11,8 +11,6 @@ import { NAV_ITEMS, NavItemType } from "@/constants";
 export default function Sidebar() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
-
-  // FIX: Hanya tutup jika sedang terbuka & abaikan warning dependency
   useEffect(() => {
     if (isOpen) {
       setIsOpen(false);

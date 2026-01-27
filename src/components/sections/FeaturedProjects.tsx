@@ -5,37 +5,36 @@ import { ExternalLink, Github, Calendar, ArrowRight, Code2, Layers } from "lucid
 import Link from "next/link";
 import Image from "next/image";
 
-// --- DATA DUMMY ---
 const projects = [
   {
-    title: "Sistem Manajemen KIP-K",
-    category: "Web Application",
-    date: "Jan 2026",
-    image: "/project-1.jpg", 
-    tech: ["Next.js", "Tailwind", "MySQL"],
-    description: "Platform analisis data statistik untuk memantau korelasi antara literasi keuangan dan gaya hidup mahasiswa.",
+    title: "Milano laundry",
+    category: "Milano Laundry Management System",
+    date: "Nov 2025",
+    image: "/ImageProject/Milanolaundry.png", 
+    tech: ["React.js", "Laravel", "Tailwind", "MySQL"],
+    description: "Sistem informasi manajemen laundry komprehensif untuk operasional kasir, pelacakan pesanan real-time, dan laporan keuangan.",
     demoLink: "https://demo-project.com",
     repoLink: "https://github.com/username/repo",
+    isPrivate: true,
+  },
+  {
+    title: "Sistem CarproBan",
+    category: "Sistem Kasir Carproban Kasihan Bantul Yogyakarta",
+    date: "Sep 2025",
+    image: "/ImageProject/Carproban.png",
+    tech: ["CodeIgniter", "TailwindCSS" ],
+    description: "Sistem yang dirancang untuk kebutuhan kasir CarproBan untuk kemudahan management stok di beberapa cabang .",
+    demoLink: "https://Carproban.id",
+    repoLink: "https://github.com/Wadidurrahman",
     isPrivate: false,
   },
   {
-    title: "E-Commerce Dashboard",
-    category: "Dashboard UI",
-    date: "Des 2025",
-    image: "/project-2.jpg",
-    tech: ["React", "Redux", "Node.js"],
-    description: "Dashboard admin high-performance untuk memantau stok dan penjualan real-time dengan grafik interaktif.",
-    demoLink: "https://demo-shop.com",
-    repoLink: "https://github.com/username/shop",
-    isPrivate: false,
-  },
-  {
-    title: "Company Profile PT Güntner",
-    category: "Landing Page",
-    date: "Nov 2025",
+    title: "ShifTara", 
+    category: "Shiftara - AI-Integrated Smart Shift Scheduler",
+    date: "Jan 2026",
     image: "/project-3.jpg",
-    tech: ["Laravel", "Bootstrap", "jQuery"],
-    description: "Redesign website korporat dengan fokus pada SEO dan load speed, meningkatkan retensi pengunjung.",
+    tech: ["React.js", "TailwindCSS", "Nest.js", "AI Integration", "Supabase"],
+    description: "SHIFTARA adalah Alat Web Penjadwal Shift Cerdas Terintegrasi AI untuk mempermudah penjadwalan.",
     demoLink: "https://guntner.com",
     repoLink: "",
     isPrivate: true,
@@ -46,7 +45,7 @@ const containerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: { staggerChildren: 0.15, delayChildren: 0.1 }, // Stagger lebih cepat agar responsif
+    transition: { staggerChildren: 0.15, delayChildren: 0.1 }, 
   },
 };
 
@@ -61,11 +60,11 @@ const cardVariants: Variants = {
 
 export function FeaturedProjects() {
   return (
-    <section className="py-8 px-4 md:px-8 bg-slate-50 relative overflow-hidden">
-      <div className="absolute top-0 inset-x-0 h-64 bg-liner-to-b from-white to-slate-50 pointer-events-none" />
+    <section className="py-5 px-4 md:px-5 bg-slate-50 relative overflow-hidden">
+      <div className="absolute top-0 inset-x-0 h-64 bg-linear-to-b from-white to-slate-50 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+        <div className="flex flex-col md:flex-row justify-between items-end mb-8 gap-6">
           <div className="max-w-2xl">
             <motion.div 
               initial={{ opacity: 0, y: 10 }}
@@ -74,7 +73,7 @@ export function FeaturedProjects() {
               className="inline-block mb-3"
             >
                <span className="py-1 px-3 rounded-md bg-white border border-sky-100 text-sky-600 font-bold text-[10px] tracking-widest uppercase shadow-sm">
-                  Portfolio & Karya
+                 Portfolio & Karya
                </span>
             </motion.div>
 
@@ -93,13 +92,12 @@ export function FeaturedProjects() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="mt-4 text-slate-500 text-lg leading-relaxed"
+              className="mt-4 text-slate-500 text-md leading-relaxed"
             >
               Koleksi proyek pilihan yang dikembangkan dengan presisi, fokus pada performa, dan pengalaman pengguna terbaik.
             </motion.p>
           </div>
           
-          {/* Tombol Desktop */}
           <motion.div
              initial={{ opacity: 0, x: 20 }}
              whileInView={{ opacity: 1, x: 0 }}
@@ -116,7 +114,6 @@ export function FeaturedProjects() {
           </motion.div>
         </div>
 
-        {/* --- Projects Grid --- */}
         <motion.div 
           variants={containerVariants}
           initial="hidden"
@@ -130,11 +127,9 @@ export function FeaturedProjects() {
               variants={cardVariants}
               className="group bg-white rounded-2xl overflow-hidden border border-slate-200 hover:border-sky-200 shadow-sm hover:shadow-2xl hover:shadow-sky-100/50 transition-all duration-500 hover:-translate-y-1 flex flex-col h-full"
             >
-              {/* Image Section */}
-              <div className="relative h-52 w-full overflow-hidden bg-slate-100">
+              <div className="relative aspect-video w-full overflow-hidden bg-slate-100">
                 <div className="absolute inset-0 bg-slate-900/0 group-hover:bg-slate-900/5 z-10 transition-colors duration-500" />
                 
-                {/* Badge Category */}
                 <div className="absolute top-4 left-4 z-20">
                    <span className="bg-white/95 backdrop-blur-sm text-slate-700 text-[10px] font-bold px-3 py-1.5 rounded-full shadow-sm border border-slate-100 flex items-center gap-1.5">
                      <Layers size={10} className="text-sky-500" />
@@ -142,20 +137,18 @@ export function FeaturedProjects() {
                    </span>
                 </div>
 
-                {/* Placeholder Image Logic (Ganti dengan Image Next.js jika sudah ada gambar) */}
-                 <div className="absolute inset-0 flex items-center justify-center bg-slate-100 text-slate-300">
+                 <div className="absolute inset-0 flex items-center justify-center bg-slate-100">
                     <Image 
                       src={project.image} 
                       alt={project.title}
                       fill
-                      className="object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out"
+                      className="object-cover object-top transform group-hover:scale-105 transition-transform duration-700 ease-out"
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     />
                  </div>
               </div>
 
-              {/* Content Section */}
-              <div className="p-6 flex flex-col grow">
+              <div className="p-2 flex flex-col grow">
                 <div className="flex items-center gap-3 text-xs text-slate-400 mb-3 font-medium">
                   <span className="flex items-center gap-1.5">
                     <Calendar size={12} /> {project.date}
@@ -170,7 +163,6 @@ export function FeaturedProjects() {
                   {project.description}
                 </p>
 
-                {/* Tech Stack Tags */}
                 <div className="mt-auto mb-6">
                   <div className="flex flex-wrap gap-2">
                     {project.tech.map((tech, i) => (
@@ -181,8 +173,7 @@ export function FeaturedProjects() {
                   </div>
                 </div>
 
-                {/* Action Buttons */}
-                <div className="grid grid-cols-2 gap-3 pt-5 border-t border-slate-50">
+                <div className="grid grid-cols-2 gap-3 p-1 border-t border-slate-50">
                   <a 
                     href={project.demoLink} 
                     target="_blank" 

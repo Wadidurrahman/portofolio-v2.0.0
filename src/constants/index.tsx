@@ -5,7 +5,7 @@ import {
   Home, User, FolderGit2, Award, LucideIcon
 } from "lucide-react";
 
-// --- 1. NAVIGATION DATA ---
+
 export interface NavItemType {
   label: string;
   href: string;
@@ -57,23 +57,68 @@ export const PROJECTS_DATA = [
     title: "Portfolio v2.0",
     description: "Website portofolio modern dengan performa tinggi, animasi interaktif Framer Motion, dan struktur kode modular.",
     tags: ["Next.js 15", "Tailwind CSS", "TypeScript"],
-    image: "/project-portfolio.png",
+    image: "/ImageProject/portofolio-v2.0.png",
     demoLink: "/",
     repoLink: "https://github.com/wadidurrahman",
+    color: "bg-emerald-600",
+    isPrivate: true,
+  },
+  {
+    slug: "Juragan Ikan", 
+    title: "Sistem Juragan Ikan",
+    description: "Sistem untuk manajemen penjualan untuk bisnis empang perikanan di tulungagung.",
+    tags: ["React.js","TailwindCSS", "Express.js", "Framotion", "MongoDB"],
+    image: "/ImageProject/juraganikan.png",
+    demoLink: "https://juraganikan-4czua4jwp-wadiddrrhmns-projects.vercel.app/",
+    repoLink: "https://github.com/Wadidurrahman/juragan_ikan.git",
+    color: "bg-violet-600",
+    isFeatured: true,
+  },
+    {
+    slug: "Pengembangan Estimator.id",
+    title: "Estimator.id - Pengembangan Fitur RAB",
+    description: "Pengembangan Fitur RAB pada sistem estimator.id pada perhitungan AHS yang mengiplementasikan rumus excel yang sebelumnya menggunakan spredsheet di rubah menjadi sistem otomatis menghitung sesaui rumus dan akurat .",
+    tags: ["React.js", "Tailwind CSS", "CodeIgniter", "MySQL"],
+    image: "/ImageProject/estimator.png",
+    demoLink: "estimator.id",
+    repoLink: "https://github.com/Wadidurrahman/Pengembangan-Estimator.id.git",
     color: "bg-emerald-600",
     isFeatured: true,
   },
   {
-    slug: "api-gateway-service",
-    title: "E-Commerce API Gateway",
-    description: "Backend Microservices untuk menangani ribuan request transaksi e-commerce dengan keamanan JWT dan Rate Limiting.",
-    tags: ["Node.js", "Express", "Redis", "Docker"],
-    image: "/project-api.png", 
-    demoLink: "#",
-    repoLink: "https://github.com/wadidurrahman",
-    color: "bg-violet-600",
-    isFeatured: true,
+    slug: "portfolio-v1",
+    title: "Portfolio v1.0",
+    description: "Website portofolio Landing Page sederhana untuk menampilkan proyek dan keterampilan saya.",
+    tags: ["React.js", "Tailwind CSS", "Fremotion"],
+    image: "/ImageProject/portofolio-v1.0.png",
+    demoLink: "https://portofoliowadiddrrhmn-wadiddrrhmns-projects.vercel.app/",
+    repoLink: "https://github.com/Wadidurrahman/Portofolio_Wadiddrrhmn.git",
+    color: "bg-emerald-600",
+    isFeatured: false,
   },
+  {
+    title: "ShifTara", 
+    category: "Shiftara - AI-Integrated Smart Shift Scheduler",
+    date: "Jan 2026",
+    image: "/project-3.jpg",
+    tech: ["React.js", "TailwindCSS", "Nest.js", "AI Integration", "Supabase"],
+    description: "SHIFTARA adalah Alat Web Penjadwal Shift Cerdas Terintegrasi AI untuk mempermudah penjadwalan.",
+    demoLink: "https://guntner.com",
+    repoLink: "",
+    isPrivate: true,
+  },
+  {
+    title: "Sistem CarproBan",
+    category: "Sistem Kasir Carproban Kasihan Bantul Yogyakarta",
+    date: "Sep 2025",
+    image: "/ImageProject/Carproban.png",
+    tech: ["CodeIgniter", "TailwindCSS" ],
+    description: "Sistem yang dirancang untuk kebutuhan kasir CarproBan untuk kemudahan management stok di beberapa cabang .",
+    demoLink: "https://Carproban.id",
+    repoLink: "https://github.com/Wadidurrahman",
+    isPrivate: false,
+  },
+  
 ];
 
 // =========================================
@@ -87,7 +132,7 @@ export const SERVICES_DATA = [
   },
   {
     title: "UI/UX Implementation",
-    icon: <Layout size={24} />, // Ganti Server dengan Layout agar relevan dengan UI
+    icon: <Layout size={24} />,
     description: "Mengubah desain menjadi kode antarmuka (Frontend) yang presisi, interaktif, dan nyaman dilihat dengan Tailwind CSS.",
   },
   {
@@ -103,7 +148,7 @@ export const SERVICES_DATA = [
 ];
 
 // =========================================
-// 5. EDUCATION DATA (Tambahkan ini)
+// 5. EDUCATION DATA 
 // =========================================
 export const EDUCATION_DATA = [
   {
@@ -135,32 +180,49 @@ export const EXPERIENCE_DATA = [
 ];
 
 // =========================================
-// 5. CERTIFICATION DATA (MBKM & Bootcamp)
+// 5. CERTIFICATION DATA 
 // =========================================
 export const CERTIFICATION_DATA = [
   {
-    title: "Studi Independen - Web Development",
+    title: "Studi Independen Ang-6 - Fullstack Web Development",
     issuer: "Infinite Learning (Kampus Merdeka)",
     year: "2023",
-    credentialLink: "#", 
+    image: "/Sartifikat/MSIB.png", 
     description: "Program intensif pengembangan web fullstack. Berhasil membangun proyek akhir dengan kolaborasi tim dan penerapan best practice industri.",
-    skills: ["React", "Responsive Design", "Teamwork"]
+    skills: ["React", "Exspress.js", "Responsive Design", "Teamwork"]
+  },
+   {
+    title: "Infinite Learning Bactsh-6 - Fullstack Web Development",
+    issuer: "Infinite Learning ",
+    year: "2023",
+    image: "/Sartifikat/InfiniteLearning.png", 
+    description: "Program intensif pengembangan web fullstack. Berhasil membangun proyek akhir dengan kolaborasi tim dan penerapan best practice industri.",
+    skills: ["React", "Exspress.js", "Responsive Design", "Teamwork"]
   },
   {
-    title: "Cloud Computing Professional",
+    title: "Alibaba Cloud - Cloud Computing",
     issuer: "Alibaba Cloud",
     year: "2023",
-    credentialLink: "#",
+    image: "/Sartifikat/Sartifikatalibabacloud.jpg", 
     description: "Mendalami infrastruktur cloud, manajemen server ECS, dan deployment aplikasi modern di infrastruktur cloud berskala global.",
     skills: ["Cloud Architecture", "ECS", "DevOps"]
   },
   {
-    title: "Fullstack Web Developer",
-    issuer: "Udemy Bootcamp",
-    year: "2022",
-    credentialLink: "#",
-    description: "Menyelesaikan kursus komprehensif mencakup fundamental HTML, CSS, Javascript, hingga Backend modern dengan Node.js.",
+    title: "Mastering React.js & Node.js",
+    issuer: "Mastering React.js & Node.js firebase authentication",
+    year: "2025",
+    image: "/Sartifikat/udemy.png", 
+    description: "Menyelesaikan kursus komprehensif mencakup pengembangan authentication menggunakan Firebase, manajemen state, dan pembuatan RESTful API dengan Node.js.",
     skills: ["Javascript", "Node.js", "MongoDB"]
   },
+   {
+    title: "Code Politan - Dasar Pemrograman Web",
+    issuer: "Code Politan CSS",
+    year: "2024",
+    image: "/Sartifikat/codepolitan.png", 
+    description: "Menyelesaikan kursus komprehensif mencakup pengembangan authentication menggunakan Firebase, manajemen state, dan pembuatan RESTful API dengan Node.js.",
+    skills: ["Javascript", "Node.js", "MongoDB"]
+  },
+  
 ];
 

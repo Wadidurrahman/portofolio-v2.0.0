@@ -22,7 +22,7 @@ export function Services() {
   };
 
   return (
-    <section className="relative py-12 px-4 bg-slate-50 overflow-hidden">
+    <section className="relative py-4 px-4 bg-slate-50 overflow-hidden">
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="text-center mb-10">
             <motion.div 
@@ -60,7 +60,6 @@ export function Services() {
               variants={cardVariants}
               className="group relative h-48 bg-white rounded-xl border border-slate-200 shadow-sm hover:shadow-xl hover:shadow-sky-200/50 overflow-hidden transition-all duration-500 ease-out"
             >
-              {/* --- Tampilan Default (Icon & Judul) --- */}
               <div className="absolute inset-0 flex flex-col items-center justify-center p-6 transition-all duration-500 group-hover:scale-90 group-hover:opacity-0">
                 <div className="w-10 h-10 mb-4 text-sky-600 bg-sky-50 border border-sky-100 rounded-lg flex items-center justify-center transition-transform duration-500">
                    {service.icon}

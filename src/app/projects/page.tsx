@@ -120,7 +120,7 @@ export default function ProjectsPage() {
                         )}
                     </div>
 
-                    <div className="flex flex-col grow p-6">
+                    <div className="flex flex-col grow p-4">
                         <div className="mb-4">
                             <h3 className="text-lg font-bold text-slate-800 mb-2 group-hover:text-sky-600 transition-colors duration-300 flex items-center justify-between">
                                 {project.title}
@@ -131,7 +131,7 @@ export default function ProjectsPage() {
                             </p>
                         </div>
 
-                        <div className="mt-auto mb-6">
+                        <div className="mt-auto mb-4">
                             <div className="flex flex-wrap gap-2">
                                 {project.tags?.slice(0, 4).map((tag, idx) => (
                                     <span key={idx} className="text-[10px] font-semibold text-slate-500 bg-slate-50 px-2.5 py-1 rounded-md border border-slate-100 group-hover:border-sky-100 group-hover:bg-sky-50 group-hover:text-sky-600 transition-colors duration-300">
