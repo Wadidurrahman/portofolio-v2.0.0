@@ -68,7 +68,7 @@ export const PROJECTS_DATA = [
     title: "Sistem Juragan Ikan",
     description: "Sistem untuk manajemen penjualan untuk bisnis empang perikanan di tulungagung.",
     tags: ["React.js","TailwindCSS", "Express.js", "Framotion", "MongoDB"],
-    image: "/ImageProject/juraganikan.png",
+    image: "/ImageProject/JuraganIkan.png",
     demoLink: "https://juraganikan-4czua4jwp-wadiddrrhmns-projects.vercel.app/",
     repoLink: "https://github.com/Wadidurrahman/juragan_ikan.git",
     color: "bg-violet-600",
