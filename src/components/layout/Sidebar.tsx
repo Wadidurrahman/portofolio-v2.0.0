@@ -145,7 +145,7 @@ export default function Sidebar() {
         
         <div className="p-4 mt-auto border-t border-slate-100 bg-white">
             <Link
-                href="/cv-wadidur.pdf" 
+                href="/CV Wadidur Rahman.pdf" 
                 target="_blank" 
                 className="flex items-center justify-center gap-2 w-full bg-slate-900 hover:bg-blue-700 text-white py-3 rounded-xl transition-all shadow-md active:translate-y-0.5 group"
             >
@@ -154,7 +154,7 @@ export default function Sidebar() {
             </Link>
 
             <p className="text-[10px] text-slate-400 text-center mt-3 font-medium">
-                © 2026 Wadidur R.
+                © by Wadidur Rahman.
             </p>
         </div>
       </aside>

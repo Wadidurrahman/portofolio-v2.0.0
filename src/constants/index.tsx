@@ -223,6 +223,14 @@ export const CERTIFICATION_DATA = [
     description: "Menyelesaikan kursus komprehensif mencakup pengembangan authentication menggunakan Firebase, manajemen state, dan pembuatan RESTful API dengan Node.js.",
     skills: ["Javascript", "Node.js", "MongoDB"]
   },
+  {
+    title: "HKI - Hak Kekayaan Intelektual",
+    issuer: "Sartifikat HKI",
+    year: "2024",
+    image: "/Sartifikat/HKI.png", 
+    description: "•	Pemegang Hak Cipta: Inovasi Rolade Lele sebagai Solusi Gizi untuk Mengatasi Stunting dan Meningkatkan Kemandirian UMKM",
+    skills: ["jurnal artikel"]
+  },
   
 ];
 
