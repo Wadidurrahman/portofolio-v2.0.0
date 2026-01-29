@@ -69,8 +69,6 @@ export function Services() {
                 </h3>
                 <div className="mt-4 w-6 h-0.5 bg-slate-200 rounded-full" />
               </div>
-
-         
               <div className="absolute inset-0 bg-linear-to-b from-white via-sky-50 to-sky-100 p-6 flex items-center justify-center text-center translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] z-10">
                 <div>
                     <h3 className="text-sky-800 font-bold text-xs mb-2 uppercase tracking-wider">

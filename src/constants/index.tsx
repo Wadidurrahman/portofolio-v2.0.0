@@ -53,17 +53,6 @@ export const PROJECTS_DATA = [
     isFeatured: true,
   },
   {
-    slug: "portfolio-v2",
-    title: "Portfolio v2.0",
-    description: "Website portofolio modern dengan performa tinggi, animasi interaktif Framer Motion, dan struktur kode modular.",
-    tags: ["Next.js 15", "Tailwind CSS", "TypeScript"],
-    image: "/ImageProject/Portofolio-v2.0.png",
-    demoLink: "/",
-    repoLink: "https://github.com/wadidurrahman",
-    color: "bg-emerald-600",
-    isPrivate: true,
-  },
-  {
     slug: "Juragan Ikan", 
     title: "Sistem Juragan Ikan",
     description: "Sistem untuk manajemen penjualan untuk bisnis empang perikanan di tulungagung.",
@@ -84,17 +73,6 @@ export const PROJECTS_DATA = [
     repoLink: "https://github.com/Wadidurrahman/Pengembangan-Estimator.id.git",
     color: "bg-emerald-600",
     isFeatured: true,
-  },
-  {
-    slug: "portfolio-v1",
-    title: "Portfolio v1.0",
-    description: "Website portofolio Landing Page sederhana untuk menampilkan proyek dan keterampilan saya.",
-    tags: ["React.js", "Tailwind CSS", "Fremotion"],
-    image: "/ImageProject/portofolio-v1.0.png",
-    demoLink: "https://portofoliowadiddrrhmn-wadiddrrhmns-projects.vercel.app/",
-    repoLink: "https://github.com/Wadidurrahman/Portofolio_Wadiddrrhmn.git",
-    color: "bg-emerald-600",
-    isFeatured: false,
   },
   {
     title: "ShifTara", 
@@ -126,9 +104,9 @@ export const PROJECTS_DATA = [
 // =========================================
 export const SERVICES_DATA = [
   {
-    title: "Web Development",
+    title: "Fullstack Web Development",
     icon: <Globe size={24} />,
-    description: "Membangun website yang responsif, cepat, dan fungsional menggunakan teknologi modern seperti Next.js dan Laravel.",
+    description: "Membangun website dari nol baik dari sisi frontend hingga backend.",
   },
   {
     title: "UI/UX Implementation",
@@ -136,14 +114,14 @@ export const SERVICES_DATA = [
     description: "Mengubah desain menjadi kode antarmuka (Frontend) yang presisi, interaktif, dan nyaman dilihat dengan Tailwind CSS.",
   },
   {
-    title: "Backend & API",
+    title: "AI Integration & Smart Solutions",
     icon: <Server size={24} />,
-    description: "Merancang logika server dan REST API sederhana yang aman untuk kebutuhan integrasi data antara Frontend dan Backend.",
+    description: "Mengintegrasikan solusi AI untuk fitur pintar seperti chatbot cerdas atau analisis otomatis.",
   },
   {
-    title: "Database Management",
+    title: "Maintenance & Optimization",
     icon: <Database size={24} />,
-    description: "Merancang struktur database (ERD) yang rapi dan relasional untuk memastikan data aplikasi tersimpan dengan baik.",
+    description: "Layanan jangka panjang (Refactoring, Update, Bug Fixes, dan Data Base Tuning).",
   },
 ];
 
