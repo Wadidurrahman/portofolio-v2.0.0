@@ -90,7 +90,7 @@ export const PROJECTS_DATA = [
     category: "Sistem Kasir Carproban Kasihan Bantul Yogyakarta",
     date: "Sep 2025",
     image: "/ImageProject/CarproBan.png",
-    tech: ["CodeIgniter", "TailwindCSS" ],
+    tags: ["React.js", "Tailwind CSS", "CodeIgniter", "MySQL"],
     description: "Sistem yang dirancang untuk kebutuhan kasir CarproBan untuk kemudahan management stok di beberapa cabang .",
     demoLink: "https://Carproban.id",
     repoLink: "https://github.com/Wadidurrahman",
@@ -141,6 +141,13 @@ export const EDUCATION_DATA = [
 // 5. EXPERIENCE DATA (MAGANG BICON) - BARU
 // =========================================
 export const EXPERIENCE_DATA = [
+  {
+    company: "UAB Styritrade, Lithuania Eropa Timur (Remote)",
+    role: "Kontrak - TraceGrid - Junior Software Developer",
+    year: "Februari 2026 - Sekarang", 
+    description: "Turut serta dalam pengembangan fitur serta UI untuk sistem TraceGrid.com",
+    skills: ["Next.js","Typescript", "TailwindCSS, Flask JSON-RPC API"],
+  },
   {
     company: "PT Baracipta Esa Engineering (Beecon)",
     role: "IT Internship - Fullstack Developer",
