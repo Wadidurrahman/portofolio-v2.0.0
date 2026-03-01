@@ -60,7 +60,7 @@ export function Hero() {
           animate="visible"
           className="order-2 lg:order-1 flex flex-col justify-center text-center lg:text-left"
         >
-          <motion.div variants={itemVariants} className="flex items-center justify-center lg:justify-start gap-3 mb-12">
+          {/* <motion.div variants={itemVariants} className="flex items-center justify-center lg:justify-start gap-3 mb-12">
             <span className="relative flex h-3 w-3">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
@@ -68,7 +68,7 @@ export function Hero() {
             <span className="text-xs font-semibold text-emerald-700 bg-emerald-50/50 px-5 py-1 rounded-full border border-emerald-100 tracking-wide">
               Terbuka Untuk Bekerja
             </span>
-          </motion.div>
+          </motion.div> */}
 
           <motion.h1 variants={itemVariants} className="text-2xl md:text-3xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-[1.15] mb-6">
             Mari Bangun Produk Digital  <br className="hidden md:block" />
