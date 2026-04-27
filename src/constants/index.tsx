@@ -45,7 +45,7 @@ export const PROJECTS_DATA = [
     slug: "tracegrid-portal",
     title: "TraceGrid Fleet Management Portal",
     description: "Pengembangan antarmuka portal autentikasi multi-peran (User & Manager) serta pembaruan UI/UX modern untuk sistem manajemen armada dan logistik internasional.",
-    tags: ["Next.js", "TypeScript", "Tailwind CSS", "React.js"],
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "React.js", "API Flask JSON-RPC"],
     image: "/ImageProject/Tracegrid.png", 
     demoLink: "",
     repoLink: "", 
