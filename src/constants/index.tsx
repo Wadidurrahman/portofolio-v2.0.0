@@ -42,6 +42,18 @@ export const TECH_ROW_2: TechItem[] = [
 // --- 3. PROJECTS DATA ---
 export const PROJECTS_DATA = [
   {
+    slug: "tracegrid-portal",
+    title: "TraceGrid Fleet Management Portal",
+    description: "Pengembangan antarmuka portal autentikasi multi-peran (User & Manager) serta pembaruan UI/UX modern untuk sistem manajemen armada dan logistik internasional.",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "React.js"],
+    image: "/ImageProject/Tracegrid.png", 
+    demoLink: "",
+    repoLink: "", 
+    isPrivate: true,
+    color: "bg-slate-800",
+    isFeatured: true,
+  },
+  {
     slug: "Milano laundry",
     title: "Milano Laundry Management System",
     description: "Sistem informasi manajemen laundry komprehensif untuk operasional kasir, pelacakan pesanan real-time, dan laporan keuangan.",
