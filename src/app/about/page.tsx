@@ -75,7 +75,7 @@ export default function AboutPage() {
             
             <motion.div variants={itemVariants} className="space-y-5 text-slate-600 text-lg leading-relaxed">
               <p>
-                <strong>Fresh Graduate S1 Informatika</strong> dari Universitas Alma Ata. Saya fokus membangun aplikasi web modern menggunakan <strong>Next.js</strong> dan <strong>Laravel</strong>, dengan ketertarikan khusus pada integrasi <strong>AI</strong>.
+                <strong>S1 Informatika</strong> dari Universitas Alma Ata. Saya fokus membangun aplikasi web modern menggunakan <strong>Next.js</strong> dan <strong>Laravel</strong>, dengan ketertarikan khusus pada integrasi <strong>AI</strong>.
               </p>
               <p>
                 Siap beradaptasi dengan cepat dan memiliki rencana strategis untuk memperluas keahlian ke ranah <strong>Mobile Development</strong> di masa depan.
