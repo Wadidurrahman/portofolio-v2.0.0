@@ -60,7 +60,7 @@ export const PROJECTS_DATA = [
     tags: ["React.js", "Laravel", "TailwindCSS", "MySQL"],
     image: "/ImageProject/Milanolaundry.png",
     demoLink: "#",
-    repoLink: "https://github.com/wadidurrahman",
+    repoLink: "https://laundryinajh.vercel.app/",
     color: "bg-blue-600",
     isFeatured: true,
   },
