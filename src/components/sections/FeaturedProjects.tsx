@@ -13,7 +13,7 @@ const projects = [
     image: "/ImageProject/Milanolaundry.png", 
     tech: ["React.js", "Laravel", "Tailwind", "MySQL"],
     description: "Sistem informasi manajemen laundry komprehensif untuk operasional kasir, pelacakan pesanan real-time, dan laporan keuangan.",
-    demoLink: "https://demo-project.com",
+    demoLink: "https://laundryinajh.vercel.app/",
     repoLink: "https://github.com/username/repo",
     isPrivate: true,
   },
