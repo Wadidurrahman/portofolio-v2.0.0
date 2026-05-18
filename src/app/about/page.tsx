@@ -4,7 +4,6 @@ import { motion, Variants } from "framer-motion";
 import Image from "next/image";
 import { Download, GraduationCap, Calendar, MapPin, Briefcase } from "lucide-react"; 
 import { EDUCATION_DATA, EXPERIENCE_DATA } from "@/constants"; 
-import Link from "next/link";
 
 type EducationItem = {
   institution: string;
@@ -52,13 +51,9 @@ export default function AboutPage() {
 
   return (
     <section className="relative min-h-full py-8 px-4 md:px-8 overflow-hidden">
-      
-
       <div className="absolute top-0 left-0 w-30 h-96 bg-blue-100/30 rounded-full blur-[100px] -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
 
       <div className="max-w-6xl mx-auto space-y-24 relative z-10">
-        
-
         <div className="grid lg:grid-cols-12 gap-12 items-center">
           <motion.div 
             className="lg:col-span-7 order-2 lg:order-1"
@@ -83,9 +78,11 @@ export default function AboutPage() {
             </motion.div>
 
             <motion.div variants={itemVariants} className="mt-8 flex flex-wrap gap-4">
-               <Link 
-                  href="/cv-wadidur.pdf" 
+               <a 
+                  href="/CV-Wadidur Rahman.pdf" 
+                  download="CV-Wadidur Rahman.pdf"
                   target="_blank"
+                  rel="noopener noreferrer"
                >
                  <motion.div
                     whileHover={{ scale: 1.02 }}
@@ -94,7 +91,7 @@ export default function AboutPage() {
                  >
                     <Download size={18} /> Unduh CV
                  </motion.div>
-               </Link>
+               </a>
                
                <motion.div 
                   className="flex items-center gap-2 px-5 py-3.5 rounded-md border border-slate-200 text-slate-700 text-sm font-semibold bg-white shadow-sm"
@@ -130,7 +127,6 @@ export default function AboutPage() {
           </motion.div>
         </div>
 
-        {/* --- EXPERIENCE SECTION (BARU) --- */}
         <motion.div
             initial="hidden"
             whileInView="visible"
@@ -151,7 +147,6 @@ export default function AboutPage() {
                         variants={itemVariants}
                         className="relative pl-8 group"
                     >
-                        {/* Timeline Dot */}
                         <span className="absolute -left-2.25 top-1.5 h-4 w-4 bg-white border-2 border-slate-400 group-hover:border-indigo-600 group-hover:bg-indigo-600 transition-colors duration-300 rotate-45" />
                         
                         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-2">
@@ -173,7 +168,6 @@ export default function AboutPage() {
             </div>
         </motion.div>
 
-        {/* --- EDUCATION SECTION --- */}
         <motion.div
             initial="hidden"
             whileInView="visible"
@@ -194,7 +188,6 @@ export default function AboutPage() {
                         variants={itemVariants}
                         className="relative pl-8 group"
                     >
-                        {/* Timeline Dot */}
                         <span className="absolute -left-2.25 top-1.5 h-4 w-4 bg-white border-2 border-slate-400 group-hover:border-blue-600 group-hover:bg-blue-600 transition-colors duration-300 rotate-45" />
                         
                         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-2">
@@ -215,7 +208,6 @@ export default function AboutPage() {
                 ))}
             </div>
         </motion.div>
-
       </div>
     </section>
   );
